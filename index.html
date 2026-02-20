@@ -309,36 +309,57 @@
         }
 
         /* Marquee */
-        .marquee {
-            background: var(--lime);
-            padding: 1rem 0;
-            overflow: hidden;
-            white-space: nowrap;
+        /* Ingredient Pills */
+        .ingredients-strip {
+            background: linear-gradient(180deg, rgba(13,13,13,0) 0%, rgba(205,255,80,0.03) 50%, rgba(13,13,13,0) 100%);
+            padding: 3rem 4%;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        .marquee-content {
+        .ingredients-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .ingredient-pill {
             display: inline-flex;
-            animation: scroll 25s linear infinite;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 0.75rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--off-white);
+            transition: all 0.3s;
+            cursor: default;
         }
 
-        .marquee-item {
-            font-family: 'Syne', sans-serif;
+        .ingredient-pill:hover {
+            transform: translateY(-3px);
+            border-color: var(--lime);
+            box-shadow: 0 10px 30px rgba(205, 255, 80, 0.15);
+        }
+
+        .ingredient-pill .pill-icon {
             font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--dark);
-            padding: 0 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
 
-        .marquee-item .star {
-            margin: 0 1rem;
-        }
-
-        @keyframes scroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-        }
+        .ingredient-pill:nth-child(1):hover { border-color: var(--lime); box-shadow: 0 10px 30px rgba(205, 255, 80, 0.2); }
+        .ingredient-pill:nth-child(2):hover { border-color: var(--electric-blue); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .ingredient-pill:nth-child(3):hover { border-color: var(--hot-pink); box-shadow: 0 10px 30px rgba(255, 60, 172, 0.2); }
+        .ingredient-pill:nth-child(4):hover { border-color: var(--orange); box-shadow: 0 10px 30px rgba(255, 149, 0, 0.2); }
+        .ingredient-pill:nth-child(5):hover { border-color: var(--purple); box-shadow: 0 10px 30px rgba(123, 97, 255, 0.2); }
+        .ingredient-pill:nth-child(6):hover { border-color: var(--lime); box-shadow: 0 10px 30px rgba(205, 255, 80, 0.2); }
+        .ingredient-pill:nth-child(7):hover { border-color: var(--electric-blue); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .ingredient-pill:nth-child(8):hover { border-color: var(--hot-pink); box-shadow: 0 10px 30px rgba(255, 60, 172, 0.2); }
 
         /* Menu Section */
         .menu {
@@ -1074,10 +1095,17 @@
     </section>
 
     <!-- Marquee -->
-    <div class="marquee">
-        <div class="marquee-content">
-            <span class="marquee-item">Vitamin D <span class="star">★</span> B12 <span class="star">★</span> Magnesium <span class="star">★</span> Creatine <span class="star">★</span> Iron <span class="star">★</span> Zinc <span class="star">★</span> Electrolytes <span class="star">★</span> Adaptogens</span>
-            <span class="marquee-item">Vitamin D <span class="star">★</span> B12 <span class="star">★</span> Magnesium <span class="star">★</span> Creatine <span class="star">★</span> Iron <span class="star">★</span> Zinc <span class="star">★</span> Electrolytes <span class="star">★</span> Adaptogens</span>
+    <!-- Ingredient Pills -->
+    <div class="ingredients-strip">
+        <div class="ingredients-wrapper">
+            <div class="ingredient-pill"><span class="pill-icon">☀️</span> Vitamin D</div>
+            <div class="ingredient-pill"><span class="pill-icon">⚡</span> B12</div>
+            <div class="ingredient-pill"><span class="pill-icon">💜</span> Magnesium</div>
+            <div class="ingredient-pill"><span class="pill-icon">💪</span> Creatine</div>
+            <div class="ingredient-pill"><span class="pill-icon">🔴</span> Iron</div>
+            <div class="ingredient-pill"><span class="pill-icon">🛡️</span> Zinc</div>
+            <div class="ingredient-pill"><span class="pill-icon">💧</span> Electrolytes</div>
+            <div class="ingredient-pill"><span class="pill-icon">🌿</span> Adaptogens</div>
         </div>
     </div>
 
